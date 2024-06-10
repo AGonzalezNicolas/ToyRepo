@@ -1,0 +1,16 @@
+#!/bin/bash
+ncase=10
+casename=default_single 
+INPUT=samples.dat
+
+# read variables from external file samples.dat and copy them into parflow file
+
+# configure the parflow case
+for ((i = 0; i < $ncase ; i++)); 
+do
+  echo $i
+  mkdir $i
+  # insert file edits here
+  cp $casename'.tcl' $i/$casename$i'.tcl'
+  cp $INPUT $i/samples_$i'.dat'
+done
